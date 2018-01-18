@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BEFE195A27F3193FE1BC76EB /* Pods_Fake_Uber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623B2F6B5AE6322F14C44849 /* Pods_Fake_Uber.framework */; };
 		DEA9DA6820112FAD0033F75C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA6720112FAD0033F75C /* AppDelegate.swift */; };
 		DEA9DA6A20112FAD0033F75C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA6920112FAD0033F75C /* ViewController.swift */; };
 		DEA9DA6D20112FAD0033F75C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA9DA6B20112FAD0033F75C /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		623B2F6B5AE6322F14C44849 /* Pods_Fake_Uber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fake_Uber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B595A0D9463AAEAC2B5BA4DD /* Pods-Fake Uber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fake Uber.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fake Uber/Pods-Fake Uber.release.xcconfig"; sourceTree = "<group>"; };
+		C4D914200DD5AE20EE24AA56 /* Pods-Fake Uber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fake Uber.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fake Uber/Pods-Fake Uber.debug.xcconfig"; sourceTree = "<group>"; };
 		DEA9DA6420112FAD0033F75C /* Fake Uber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fake Uber.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA9DA6720112FAD0033F75C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEA9DA6920112FAD0033F75C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEFE195A27F3193FE1BC76EB /* Pods_Fake_Uber.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17ECDCA2A3F9CFB9D7C12269 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				623B2F6B5AE6322F14C44849 /* Pods_Fake_Uber.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A57CC9EF7B2A1C5FB78C7A1A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4D914200DD5AE20EE24AA56 /* Pods-Fake Uber.debug.xcconfig */,
+				B595A0D9463AAEAC2B5BA4DD /* Pods-Fake Uber.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DEA9DA5B20112FAD0033F75C = {
 			isa = PBXGroup;
 			children = (
 				DEA9DA6620112FAD0033F75C /* Fake Uber */,
 				DEA9DA6520112FAD0033F75C /* Products */,
+				A57CC9EF7B2A1C5FB78C7A1A /* Pods */,
+				17ECDCA2A3F9CFB9D7C12269 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEA9DA7620112FAD0033F75C /* Build configuration list for PBXNativeTarget "Fake Uber" */;
 			buildPhases = (
+				ED1720259F5564D15EF81529 /* [CP] Check Pods Manifest.lock */,
 				DEA9DA6020112FAD0033F75C /* Sources */,
 				DEA9DA6120112FAD0033F75C /* Frameworks */,
 				DEA9DA6220112FAD0033F75C /* Resources */,
+				A584482438489505F804E532 /* [CP] Embed Pods Frameworks */,
+				7F5AFA520955BE9FDFCBC63E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,64 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7F5AFA520955BE9FDFCBC63E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fake Uber/Pods-Fake Uber-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A584482438489505F804E532 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Fake Uber/Pods-Fake Uber-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fake Uber/Pods-Fake Uber-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED1720259F5564D15EF81529 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fake Uber-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DEA9DA6020112FAD0033F75C /* Sources */ = {
@@ -272,6 +357,7 @@
 		};
 		DEA9DA7720112FAD0033F75C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4D914200DD5AE20EE24AA56 /* Pods-Fake Uber.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +373,7 @@
 		};
 		DEA9DA7820112FAD0033F75C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B595A0D9463AAEAC2B5BA4DD /* Pods-Fake Uber.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
