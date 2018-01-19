@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		BEFE195A27F3193FE1BC76EB /* Pods_Fake_Uber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623B2F6B5AE6322F14C44849 /* Pods_Fake_Uber.framework */; };
 		DEA9DA6820112FAD0033F75C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA6720112FAD0033F75C /* AppDelegate.swift */; };
-		DEA9DA6A20112FAD0033F75C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA6920112FAD0033F75C /* ViewController.swift */; };
+		DEA9DA6A20112FAD0033F75C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA6920112FAD0033F75C /* HomeVC.swift */; };
 		DEA9DA6D20112FAD0033F75C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA9DA6B20112FAD0033F75C /* Main.storyboard */; };
 		DEA9DA6F20112FAD0033F75C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA9DA6E20112FAD0033F75C /* Assets.xcassets */; };
 		DEA9DA7220112FAD0033F75C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA9DA7020112FAD0033F75C /* LaunchScreen.storyboard */; };
@@ -18,6 +18,9 @@
 		DEA9DA8120116D2C0033F75C /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA8020116D2C0033F75C /* RoundedShadowView.swift */; };
 		DEA9DA8320116E5A0033F75C /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA8220116E5A0033F75C /* CircleView.swift */; };
 		DEA9DA8520116FA20033F75C /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA8420116FA20033F75C /* RoundedShadowButton.swift */; };
+		DEA9DA87201189360033F75C /* LeftSidePanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA86201189360033F75C /* LeftSidePanelVC.swift */; };
+		DEA9DA89201189D40033F75C /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA88201189D40033F75C /* ContainerVC.swift */; };
+		DEA9DA8C20118E390033F75C /* centerVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA8B20118E390033F75C /* centerVCDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +29,7 @@
 		C4D914200DD5AE20EE24AA56 /* Pods-Fake Uber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fake Uber.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fake Uber/Pods-Fake Uber.debug.xcconfig"; sourceTree = "<group>"; };
 		DEA9DA6420112FAD0033F75C /* Fake Uber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fake Uber.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA9DA6720112FAD0033F75C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DEA9DA6920112FAD0033F75C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DEA9DA6920112FAD0033F75C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		DEA9DA6C20112FAD0033F75C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DEA9DA6E20112FAD0033F75C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEA9DA7120112FAD0033F75C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +39,9 @@
 		DEA9DA8020116D2C0033F75C /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
 		DEA9DA8220116E5A0033F75C /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		DEA9DA8420116FA20033F75C /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
+		DEA9DA86201189360033F75C /* LeftSidePanelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSidePanelVC.swift; sourceTree = "<group>"; };
+		DEA9DA88201189D40033F75C /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
+		DEA9DA8B20118E390033F75C /* centerVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = centerVCDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,11 +94,11 @@
 		DEA9DA6620112FAD0033F75C /* Fake Uber */ = {
 			isa = PBXGroup;
 			children = (
+				DEA9DA8A20118E250033F75C /* Protocols */,
 				DEA9DA7B201166AA0033F75C /* Model */,
 				DEA9DA7A2011669F0033F75C /* View */,
 				DEA9DA79201166970033F75C /* Controller */,
 				DEA9DA6720112FAD0033F75C /* AppDelegate.swift */,
-				DEA9DA6920112FAD0033F75C /* ViewController.swift */,
 				DEA9DA6B20112FAD0033F75C /* Main.storyboard */,
 				DEA9DA6E20112FAD0033F75C /* Assets.xcassets */,
 				DEA9DA7020112FAD0033F75C /* LaunchScreen.storyboard */,
@@ -104,6 +110,9 @@
 		DEA9DA79201166970033F75C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DEA9DA6920112FAD0033F75C /* HomeVC.swift */,
+				DEA9DA86201189360033F75C /* LeftSidePanelVC.swift */,
+				DEA9DA88201189D40033F75C /* ContainerVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -125,6 +134,14 @@
 				DEA9DA7C201166C50033F75C /* GradientView.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DEA9DA8A20118E250033F75C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DEA9DA8B20118E390033F75C /* centerVCDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +278,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEA9DA8520116FA20033F75C /* RoundedShadowButton.swift in Sources */,
+				DEA9DA87201189360033F75C /* LeftSidePanelVC.swift in Sources */,
 				DEA9DA8320116E5A0033F75C /* CircleView.swift in Sources */,
-				DEA9DA6A20112FAD0033F75C /* ViewController.swift in Sources */,
+				DEA9DA89201189D40033F75C /* ContainerVC.swift in Sources */,
+				DEA9DA8C20118E390033F75C /* centerVCDelegate.swift in Sources */,
+				DEA9DA6A20112FAD0033F75C /* HomeVC.swift in Sources */,
 				DEA9DA7F20116C220033F75C /* RoundImageView.swift in Sources */,
 				DEA9DA8120116D2C0033F75C /* RoundedShadowView.swift in Sources */,
 				DEA9DA6820112FAD0033F75C /* AppDelegate.swift in Sources */,

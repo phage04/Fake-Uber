@@ -9,10 +9,12 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class HomeVC: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var actionBtn: RoundedShadowButton!
+    
+    var delegate: CenterVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,10 @@ class ViewController: UIViewController, MKMapViewDelegate {
 
     @IBAction func actionBtnPressed(_ sender: Any) {
         actionBtn.animateBtn(shouldLoad: true, withMsg: nil)
+    }
+    @IBAction func menuBtnPressed(_ sender: Any) {
+        delegate?.toggleLeftPanel()
+        
     }
     
 }
