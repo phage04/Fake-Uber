@@ -27,6 +27,7 @@ class ContainerVC: UIViewController {
         didSet {
             let shouldShowShadow = (currentState != .collapsed)
             shouldShowShadowForCenterViewController(status: shouldShowShadow)
+            //shadow
         }
     }
     var leftVC: LeftSidePanelVC!
