@@ -23,6 +23,7 @@
 		DEA9DA8C20118E390033F75C /* centerVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA8B20118E390033F75C /* centerVCDelegate.swift */; };
 		DEF64BFA20124B0200DF359C /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF64BF920124B0200DF359C /* UIViewExt.swift */; };
 		DEF64BFC2012525E00DF359C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF64BFB2012525E00DF359C /* LoginVC.swift */; };
+		DEF64BFE20126ED000DF359C /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF64BFD20126ED000DF359C /* RoundedCornerTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		DEA9DA8B20118E390033F75C /* centerVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = centerVCDelegate.swift; sourceTree = "<group>"; };
 		DEF64BF920124B0200DF359C /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		DEF64BFB2012525E00DF359C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		DEF64BFD20126ED000DF359C /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				DEA9DA8020116D2C0033F75C /* RoundedShadowView.swift */,
 				DEA9DA8220116E5A0033F75C /* CircleView.swift */,
 				DEA9DA8420116FA20033F75C /* RoundedShadowButton.swift */,
+				DEF64BFD20126ED000DF359C /* RoundedCornerTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				DEA9DA6A20112FAD0033F75C /* HomeVC.swift in Sources */,
 				DEA9DA7F20116C220033F75C /* RoundImageView.swift in Sources */,
 				DEA9DA8120116D2C0033F75C /* RoundedShadowView.swift in Sources */,
+				DEF64BFE20126ED000DF359C /* RoundedCornerTextField.swift in Sources */,
 				DEA9DA6820112FAD0033F75C /* AppDelegate.swift in Sources */,
 				DEA9DA7D201166C50033F75C /* GradientView.swift in Sources */,
 			);
