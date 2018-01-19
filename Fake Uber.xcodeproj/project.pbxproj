@@ -24,6 +24,8 @@
 		DEF64BFA20124B0200DF359C /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF64BF920124B0200DF359C /* UIViewExt.swift */; };
 		DEF64BFC2012525E00DF359C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF64BFB2012525E00DF359C /* LoginVC.swift */; };
 		DEF64BFE20126ED000DF359C /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF64BFD20126ED000DF359C /* RoundedCornerTextField.swift */; };
+		DEF64C00201282F500DF359C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEF64BFF201282F500DF359C /* GoogleService-Info.plist */; };
+		DEF64C03201284C300DF359C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF64C02201284C300DF359C /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		DEF64BF920124B0200DF359C /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		DEF64BFB2012525E00DF359C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DEF64BFD20126ED000DF359C /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
+		DEF64BFF201282F500DF359C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DEF64C02201284C300DF359C /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		DEA9DA6620112FAD0033F75C /* Fake Uber */ = {
 			isa = PBXGroup;
 			children = (
+				DEF64C01201284B300DF359C /* Services */,
 				DEF64BF820124AEE00DF359C /* Extensions */,
 				DEA9DA8A20118E250033F75C /* Protocols */,
 				DEA9DA7B201166AA0033F75C /* Model */,
@@ -110,6 +115,7 @@
 				DEA9DA6E20112FAD0033F75C /* Assets.xcassets */,
 				DEA9DA7020112FAD0033F75C /* LaunchScreen.storyboard */,
 				DEA9DA7320112FAD0033F75C /* Info.plist */,
+				DEF64BFF201282F500DF359C /* GoogleService-Info.plist */,
 			);
 			path = "Fake Uber";
 			sourceTree = "<group>";
@@ -159,6 +165,14 @@
 				DEF64BF920124B0200DF359C /* UIViewExt.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DEF64C01201284B300DF359C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DEF64C02201284C300DF359C /* DataService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEA9DA7220112FAD0033F75C /* LaunchScreen.storyboard in Resources */,
+				DEF64C00201282F500DF359C /* GoogleService-Info.plist in Resources */,
 				DEA9DA6F20112FAD0033F75C /* Assets.xcassets in Resources */,
 				DEA9DA6D20112FAD0033F75C /* Main.storyboard in Resources */,
 			);
@@ -295,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEA9DA8520116FA20033F75C /* RoundedShadowButton.swift in Sources */,
+				DEF64C03201284C300DF359C /* DataService.swift in Sources */,
 				DEA9DA87201189360033F75C /* LeftSidePanelVC.swift in Sources */,
 				DEF64BFC2012525E00DF359C /* LoginVC.swift in Sources */,
 				DEA9DA8320116E5A0033F75C /* CircleView.swift in Sources */,
