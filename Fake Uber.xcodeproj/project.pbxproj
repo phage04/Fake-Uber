@@ -22,6 +22,7 @@
 		DEA9DA89201189D40033F75C /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA88201189D40033F75C /* ContainerVC.swift */; };
 		DEA9DA8C20118E390033F75C /* centerVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA8B20118E390033F75C /* centerVCDelegate.swift */; };
 		DEF64BFA20124B0200DF359C /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF64BF920124B0200DF359C /* UIViewExt.swift */; };
+		DEF64BFC2012525E00DF359C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF64BFB2012525E00DF359C /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		DEA9DA88201189D40033F75C /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		DEA9DA8B20118E390033F75C /* centerVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = centerVCDelegate.swift; sourceTree = "<group>"; };
 		DEF64BF920124B0200DF359C /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		DEF64BFB2012525E00DF359C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				DEA9DA6920112FAD0033F75C /* HomeVC.swift */,
 				DEA9DA86201189360033F75C /* LeftSidePanelVC.swift */,
 				DEA9DA88201189D40033F75C /* ContainerVC.swift */,
+				DEF64BFB2012525E00DF359C /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			files = (
 				DEA9DA8520116FA20033F75C /* RoundedShadowButton.swift in Sources */,
 				DEA9DA87201189360033F75C /* LeftSidePanelVC.swift in Sources */,
+				DEF64BFC2012525E00DF359C /* LoginVC.swift in Sources */,
 				DEA9DA8320116E5A0033F75C /* CircleView.swift in Sources */,
 				DEA9DA89201189D40033F75C /* ContainerVC.swift in Sources */,
 				DEA9DA8C20118E390033F75C /* centerVCDelegate.swift in Sources */,
