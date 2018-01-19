@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MKMapViewDelegate {
 
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var actionBtn: RoundedShadowButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        mapView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +25,9 @@ class ViewController: UIViewController {
         
     }
 
-
+    @IBAction func actionBtnPressed(_ sender: Any) {
+        actionBtn.animateBtn(shouldLoad: true, withMsg: nil)
+    }
+    
 }
 
