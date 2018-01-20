@@ -106,6 +106,9 @@
                                     <constraint firstAttribute="height" constant="60" id="SFt-By-E33"/>
                                 </constraints>
                                 <state key="normal" image="centerMapBtn"/>
+                                <connections>
+                                    <action selector="centerBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HQ2-GR-ORx"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uFB-7q-WO8" customClass="RoundedShadowView" customModule="Fake_Uber" customModuleProvider="target">
                                 <rect key="frame" x="10" y="88" width="355" height="80"/>
