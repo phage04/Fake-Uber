@@ -210,6 +210,7 @@
                     <connections>
                         <outlet property="actionBtn" destination="3wd-Ba-Ev7" id="Xgi-0I-6ve"/>
                         <outlet property="mapView" destination="HBO-lf-jBr" id="MI5-96-szL"/>
+                        <outlet property="userImageView" destination="wo6-ch-REr" id="9Ag-vU-Er1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -529,6 +530,6 @@
         <image name="centerMapBtn" width="62" height="62"/>
         <image name="menuSliderBtn" width="30" height="24"/>
         <image name="pexels-photo-24821" width="2992" height="2000"/>
-        <image name="sample-photo" width="320" height="320"/>
+        <image name="sample-photo" width="300" height="289"/>
     </resources>
 </document>

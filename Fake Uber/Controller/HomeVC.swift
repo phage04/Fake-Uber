@@ -9,11 +9,13 @@
 import UIKit
 import MapKit
 import RevealingSplashView
+import Firebase
 
 class HomeVC: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var actionBtn: RoundedShadowButton!
+    @IBOutlet weak var userImageView: RoundImageView!
     
     var delegate: CenterVCDelegate?
     
@@ -24,8 +26,7 @@ class HomeVC: UIViewController, MKMapViewDelegate {
         mapView.delegate = self
         self.view.addSubview(revealingSplashView)
         revealingSplashView.animationType = SplashAnimationType.heartBeat
-        revealingSplashView.startAnimation()
-        
+        revealingSplashView.startAnimation()        
         revealingSplashView.heartAttack = true
     }
 
