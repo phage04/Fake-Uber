@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginVC: UIViewController, UITextFieldDelegate {
+class LoginVC: UIViewController, UITextFieldDelegate, Alertable {
 
     @IBOutlet weak var emailField: RoundedCornerTextField!
     @IBOutlet weak var passwordField: RoundedCornerTextField!
@@ -59,21 +59,21 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                         if let errorCode = FIRAuthErrorCode(rawValue: error!._code) {
                             switch errorCode {
                             case .errorCodeEmailAlreadyInUse:
-                                print("Email already in use.")
+                                self.showAlert("Email already in use.")
                             case .errorCodeWrongPassword:
-                                print("Wrong password.")
+                                self.showAlert("Wrong password.")
                             case .errorCodeUserNotFound:
-                                print("No such user found. Signing up user...")
+                        
                                 FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
                                     if error != nil {
                                         if let errorCode = FIRAuthErrorCode(rawValue: error!._code) {
                                             switch errorCode {
                                             case .errorCodeInvalidEmail:
-                                                print("Email invalid. Please try again.")
+                                                self.showAlert("Email invalid. Please try again.")
                                             case .errorCodeEmailAlreadyInUse:
-                                                print("Email already in use.")
+                                                self.showAlert("Email already in use.")
                                             default:
-                                                print("Something went wrong. Please try again.")
+                                                self.showAlert("Something went wrong. Please try again.")
                                             }
                                         }
                                     }else{
@@ -88,11 +88,12 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                                         }
                                         print("Successfully created a new user in firebase.")
                                     }
+                                    self.dismiss(animated: true, completion: nil)
                                 })
                             default:
-                                print("Something went wrong. Please try again.")
+                                self.showAlert("Something went wrong. Please try again.")
                             }
-                            self.dismiss(animated: true, completion: nil)
+                            
                         }
                         
                         
