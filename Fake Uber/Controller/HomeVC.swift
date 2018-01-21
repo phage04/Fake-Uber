@@ -31,6 +31,7 @@ class HomeVC: UIViewController{
     
     var tableView = UITableView()
     var matchingItems: [MKMapItem] = [MKMapItem]()
+    var selectedItemPlacemark: MKPlacemark? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -153,12 +154,24 @@ extension HomeVC: MKMapViewDelegate{
             view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.image = UIImage(named: "driverAnnotation")
             return view
-        }else if let annotation = annotation as? PassengerAnnotation {
+        } else if let annotation = annotation as? PassengerAnnotation {
             let indentifier = "passenger"
             var view: MKAnnotationView
             view = MKAnnotationView(annotation: annotation, reuseIdentifier: indentifier)
             view.image = UIImage(named: "currentLocationAnnotation")
             return view
+        } else if let annotation = annotation as? MKPointAnnotation {
+            let identifier = "destination"
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+            if annotationView == nil {
+                annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            } else{
+                annotationView?.annotation = annotation
+            }
+            
+            annotationView?.image = UIImage(named: "destinationAnnotation")
+            return annotationView
+            
         }
         return nil
     }
@@ -186,6 +199,22 @@ extension HomeVC: MKMapViewDelegate{
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    func dropPinFor(placemark: MKPlacemark) {
+        
+        selectedItemPlacemark = placemark
+     
+        for annotation in mapView.annotations {
+            if annotation.isKind(of: MKPointAnnotation.self) {
+                mapView.removeAnnotation(annotation)
+            }
+        }
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        mapView.addAnnotation(annotation)
+    
     }
 }
 
@@ -287,6 +316,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         let selectedMapItem = matchingItems[indexPath.row]
         
         DataService.instance.REF_USERS.child(currentUserId!).updateChildValues(["tripCoordinate": [selectedMapItem.placemark.coordinate.latitude, selectedMapItem.placemark.coordinate.longitude]])
+        
+        dropPinFor(placemark: selectedMapItem.placemark)
 
         animateTableView(shouldShow: false)
         print("selected")
