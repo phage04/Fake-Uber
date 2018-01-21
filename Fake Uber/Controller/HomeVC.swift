@@ -31,6 +31,7 @@ class HomeVC: UIViewController{
     
     var tableView = UITableView()
     var matchingItems: [MKMapItem] = [MKMapItem]()
+    var route: MKRoute?
     var selectedItemPlacemark: MKPlacemark? = nil
     
     override func viewDidLoad() {
@@ -176,8 +177,15 @@ extension HomeVC: MKMapViewDelegate{
         return nil
     }
     
-    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+    func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
         centerMapBtn.fadeTo(alpha: 1.0, withDuration: 0.2)
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let lineRenderer = MKPolylineRenderer(overlay: self.route!.polyline)
+        lineRenderer.strokeColor = UIColor.black.withAlphaComponent(0.75)
+        lineRenderer.lineWidth = 3
+        return lineRenderer
     }
     
     func performSearch(){
@@ -215,6 +223,23 @@ extension HomeVC: MKMapViewDelegate{
         annotation.coordinate = placemark.coordinate
         mapView.addAnnotation(annotation)
     
+    }
+    
+    func searchMapKitForResultsWithPolyline(forMapItem mapItem: MKMapItem) {
+        let request = MKDirectionsRequest()
+        request.source = MKMapItem.forCurrentLocation()
+        request.destination = mapItem
+        request.transportType = MKDirectionsTransportType.automobile
+        
+        let directions = MKDirections(request: request)
+        directions.calculate { (response, error) in
+            guard let response = response else {
+                print(error)
+                return
+            }
+            self.route = response.routes[0]
+            self.mapView.add(self.route!.polyline)
+        }
     }
 }
 
@@ -318,7 +343,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         DataService.instance.REF_USERS.child(currentUserId!).updateChildValues(["tripCoordinate": [selectedMapItem.placemark.coordinate.latitude, selectedMapItem.placemark.coordinate.longitude]])
         
         dropPinFor(placemark: selectedMapItem.placemark)
-
+        searchMapKitForResultsWithPolyline(forMapItem: selectedMapItem)
         animateTableView(shouldShow: false)
         print("selected")
     }
