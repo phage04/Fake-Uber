@@ -25,6 +25,8 @@ class HomeVC: UIViewController{
     var manager: CLLocationManager?
     var regionRadius: CLLocationDistance = 1000
     
+    var currentUserId = FIRAuth.auth()?.currentUser?.uid
+    
     let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "launchScreenIcon")!, iconInitialSize: CGSize(width: 80, height: 80), backgroundColor: UIColor.white)
     
     var tableView = UITableView()
@@ -151,9 +153,14 @@ extension HomeVC: MKMapViewDelegate{
             view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.image = UIImage(named: "driverAnnotation")
             return view
-        }else{
-            return nil
+        }else if let annotation = annotation as? PassengerAnnotation {
+            let indentifier = "passenger"
+            var view: MKAnnotationView
+            view = MKAnnotationView(annotation: annotation, reuseIdentifier: indentifier)
+            view.image = UIImage(named: "currentLocationAnnotation")
+            return view
         }
+        return nil
     }
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
@@ -270,8 +277,19 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         return matchingItems.count
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected")
+        
+        let passengerCoordinate = manager?.location?.coordinate
+        let passengerAnnotation = PassengerAnnotation(coordinate: passengerCoordinate!, key: currentUserId!)
+        mapView.addAnnotation(passengerAnnotation)
+        
+        destinationTextField.text = tableView.cellForRow(at: indexPath)?.textLabel?.text
+        
+        let selectedMapItem = matchingItems[indexPath.row]
+        
+        DataService.instance.REF_USERS.child(currentUserId!).updateChildValues(["tripCoordinate": [selectedMapItem.placemark.coordinate.latitude, selectedMapItem.placemark.coordinate.longitude]])
+
         animateTableView(shouldShow: false)
+        print("selected")
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         view.endEditing(true)
