@@ -13,6 +13,8 @@
 		DEA58DF420144C0F004F421C /* PassengerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DF320144C0F004F421C /* PassengerAnnotation.swift */; };
 		DEA58DF62014F822004F421C /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DF52014F822004F421C /* UIViewControllerExt.swift */; };
 		DEA58DF8201539C6004F421C /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DF7201539C6004F421C /* Alertable.swift */; };
+		DEA58DFA20154366004F421C /* PickUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DF920154366004F421C /* PickUpVC.swift */; };
+		DEA58DFC201544C3004F421C /* RoundMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DFB201544C2004F421C /* RoundMapView.swift */; };
 		DEA9DA6820112FAD0033F75C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA6720112FAD0033F75C /* AppDelegate.swift */; };
 		DEA9DA6A20112FAD0033F75C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA6920112FAD0033F75C /* HomeVC.swift */; };
 		DEA9DA6D20112FAD0033F75C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA9DA6B20112FAD0033F75C /* Main.storyboard */; };
@@ -42,6 +44,8 @@
 		DEA58DF320144C0F004F421C /* PassengerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerAnnotation.swift; sourceTree = "<group>"; };
 		DEA58DF52014F822004F421C /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		DEA58DF7201539C6004F421C /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		DEA58DF920154366004F421C /* PickUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpVC.swift; sourceTree = "<group>"; };
+		DEA58DFB201544C2004F421C /* RoundMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundMapView.swift; sourceTree = "<group>"; };
 		DEA9DA6420112FAD0033F75C /* Fake Uber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fake Uber.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA9DA6720112FAD0033F75C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEA9DA6920112FAD0033F75C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 		DEA9DA79201166970033F75C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DEA58DF920154366004F421C /* PickUpVC.swift */,
 				DEA9DA6920112FAD0033F75C /* HomeVC.swift */,
 				DEA9DA86201189360033F75C /* LeftSidePanelVC.swift */,
 				DEA9DA88201189D40033F75C /* ContainerVC.swift */,
@@ -151,6 +156,7 @@
 				DEF64BFD20126ED000DF359C /* RoundedCornerTextField.swift */,
 				DEA58DF12014134B004F421C /* DriverAnnotation.swift */,
 				DEA58DF320144C0F004F421C /* PassengerAnnotation.swift */,
+				DEA58DFB201544C2004F421C /* RoundMapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -326,6 +332,7 @@
 			files = (
 				DEA9DA8520116FA20033F75C /* RoundedShadowButton.swift in Sources */,
 				DEF64C03201284C300DF359C /* DataService.swift in Sources */,
+				DEA58DFA20154366004F421C /* PickUpVC.swift in Sources */,
 				DEA9DA87201189360033F75C /* LeftSidePanelVC.swift in Sources */,
 				DEF64BFC2012525E00DF359C /* LoginVC.swift in Sources */,
 				DEA9DA8320116E5A0033F75C /* CircleView.swift in Sources */,
@@ -338,6 +345,7 @@
 				DEA58DF8201539C6004F421C /* Alertable.swift in Sources */,
 				DEA9DA6A20112FAD0033F75C /* HomeVC.swift in Sources */,
 				DEA58DF02013FD64004F421C /* UpdateService.swift in Sources */,
+				DEA58DFC201544C3004F421C /* RoundMapView.swift in Sources */,
 				DEA9DA7F20116C220033F75C /* RoundImageView.swift in Sources */,
 				DEA9DA8120116D2C0033F75C /* RoundedShadowView.swift in Sources */,
 				DEF64BFE20126ED000DF359C /* RoundedCornerTextField.swift in Sources */,
