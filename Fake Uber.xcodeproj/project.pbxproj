@@ -11,6 +11,7 @@
 		DEA58DF02013FD64004F421C /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DEF2013FD64004F421C /* UpdateService.swift */; };
 		DEA58DF22014134B004F421C /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DF12014134B004F421C /* DriverAnnotation.swift */; };
 		DEA58DF420144C0F004F421C /* PassengerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DF320144C0F004F421C /* PassengerAnnotation.swift */; };
+		DEA58DF62014F822004F421C /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DF52014F822004F421C /* UIViewControllerExt.swift */; };
 		DEA9DA6820112FAD0033F75C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA6720112FAD0033F75C /* AppDelegate.swift */; };
 		DEA9DA6A20112FAD0033F75C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA6920112FAD0033F75C /* HomeVC.swift */; };
 		DEA9DA6D20112FAD0033F75C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA9DA6B20112FAD0033F75C /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		DEA58DEF2013FD64004F421C /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
 		DEA58DF12014134B004F421C /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		DEA58DF320144C0F004F421C /* PassengerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerAnnotation.swift; sourceTree = "<group>"; };
+		DEA58DF52014F822004F421C /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		DEA9DA6420112FAD0033F75C /* Fake Uber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fake Uber.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA9DA6720112FAD0033F75C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEA9DA6920112FAD0033F75C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				DEF64BF920124B0200DF359C /* UIViewExt.swift */,
+				DEA58DF52014F822004F421C /* UIViewControllerExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				DEA58DF420144C0F004F421C /* PassengerAnnotation.swift in Sources */,
 				DEF64BFA20124B0200DF359C /* UIViewExt.swift in Sources */,
 				DEA58DF22014134B004F421C /* DriverAnnotation.swift in Sources */,
+				DEA58DF62014F822004F421C /* UIViewControllerExt.swift in Sources */,
 				DEA9DA6A20112FAD0033F75C /* HomeVC.swift in Sources */,
 				DEA58DF02013FD64004F421C /* UpdateService.swift in Sources */,
 				DEA9DA7F20116C220033F75C /* RoundImageView.swift in Sources */,

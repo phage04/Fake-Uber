@@ -205,6 +205,7 @@ extension HomeVC: MKMapViewDelegate{
                     self.matchingItems.append(mapItem as MKMapItem)
                 }
                 self.tableView.reloadData()
+                self.shouldPresentLoadingView(false)
             }
         }
     }
@@ -239,6 +240,7 @@ extension HomeVC: MKMapViewDelegate{
             }
             self.route = response.routes[0]
             self.mapView.add(self.route!.polyline)
+            self.shouldPresentLoadingView(false)
         }
     }
 }
@@ -272,6 +274,7 @@ extension HomeVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == destinationTextField {
             performSearch()
+            shouldPresentLoadingView(true)
             view.endEditing(true)
         }
         return true
@@ -291,6 +294,16 @@ extension HomeVC: UITextFieldDelegate {
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         matchingItems = []
         tableView.reloadData()
+        
+        DataService.instance.REF_USERS.child(currentUserId!).child("tripCoordinate").removeValue()
+        mapView.removeOverlays(mapView.overlays)
+        for annotation in mapView.annotations {
+            if let annotation = annotation as? MKPointAnnotation {
+                mapView.removeAnnotation(annotation)
+            } else if annotation.isKind(of: PassengerAnnotation.self){
+                mapView.removeAnnotation(annotation)
+            }
+        }
         centerMapOnUserLocation()
         return true
     }
@@ -332,6 +345,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        shouldPresentLoadingView(true)
+        
         let passengerCoordinate = manager?.location?.coordinate
         let passengerAnnotation = PassengerAnnotation(coordinate: passengerCoordinate!, key: currentUserId!)
         mapView.addAnnotation(passengerAnnotation)
@@ -344,6 +359,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         
         dropPinFor(placemark: selectedMapItem.placemark)
         searchMapKitForResultsWithPolyline(forMapItem: selectedMapItem)
+        
         animateTableView(shouldShow: false)
         print("selected")
     }
