@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BEFE195A27F3193FE1BC76EB /* Pods_Fake_Uber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623B2F6B5AE6322F14C44849 /* Pods_Fake_Uber.framework */; };
 		DEA58DF02013FD64004F421C /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DEF2013FD64004F421C /* UpdateService.swift */; };
+		DEA58DF22014134B004F421C /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DF12014134B004F421C /* DriverAnnotation.swift */; };
 		DEA9DA6820112FAD0033F75C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA6720112FAD0033F75C /* AppDelegate.swift */; };
 		DEA9DA6A20112FAD0033F75C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA6920112FAD0033F75C /* HomeVC.swift */; };
 		DEA9DA6D20112FAD0033F75C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA9DA6B20112FAD0033F75C /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		B595A0D9463AAEAC2B5BA4DD /* Pods-Fake Uber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fake Uber.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fake Uber/Pods-Fake Uber.release.xcconfig"; sourceTree = "<group>"; };
 		C4D914200DD5AE20EE24AA56 /* Pods-Fake Uber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fake Uber.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fake Uber/Pods-Fake Uber.debug.xcconfig"; sourceTree = "<group>"; };
 		DEA58DEF2013FD64004F421C /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
+		DEA58DF12014134B004F421C /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		DEA9DA6420112FAD0033F75C /* Fake Uber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fake Uber.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA9DA6720112FAD0033F75C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEA9DA6920112FAD0033F75C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				DEA9DA8220116E5A0033F75C /* CircleView.swift */,
 				DEA9DA8420116FA20033F75C /* RoundedShadowButton.swift */,
 				DEF64BFD20126ED000DF359C /* RoundedCornerTextField.swift */,
+				DEA58DF12014134B004F421C /* DriverAnnotation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				DEA9DA89201189D40033F75C /* ContainerVC.swift in Sources */,
 				DEA9DA8C20118E390033F75C /* centerVCDelegate.swift in Sources */,
 				DEF64BFA20124B0200DF359C /* UIViewExt.swift in Sources */,
+				DEA58DF22014134B004F421C /* DriverAnnotation.swift in Sources */,
 				DEA9DA6A20112FAD0033F75C /* HomeVC.swift in Sources */,
 				DEA58DF02013FD64004F421C /* UpdateService.swift in Sources */,
 				DEA9DA7F20116C220033F75C /* RoundImageView.swift in Sources */,
