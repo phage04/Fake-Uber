@@ -12,6 +12,20 @@ import RevealingSplashView
 import Firebase
 import CoreLocation
 
+enum AnnotationType {
+    case pickup
+    case destination
+    case driver
+}
+
+enum ButtonAction {
+    case requestRide
+    case getDirectionsToPassenger
+    case getDirectionsToDestination
+    case startTrip
+    case endTrip
+}
+
 class HomeVC: UIViewController, Alertable{
 
     @IBOutlet weak var mapView: MKMapView!
@@ -34,6 +48,8 @@ class HomeVC: UIViewController, Alertable{
     var matchingItems: [MKMapItem] = [MKMapItem]()
     var route: MKRoute?
     var selectedItemPlacemark: MKPlacemark? = nil
+    
+    var actionForButton: ButtonAction = .requestRide
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,17 +74,19 @@ class HomeVC: UIViewController, Alertable{
             })
         })
         
+        cancelBtn.alpha = 0.0
+        
         self.view.addSubview(revealingSplashView)
         revealingSplashView.animationType = SplashAnimationType.heartBeat
         revealingSplashView.startAnimation()        
-        revealingSplashView.heartAttack = true
+        
         
         UpdateService.instance.observeTrips { (tripDict) in
             if let tripDict = tripDict {
                 let pickUpCoordinateArray = tripDict["pickUpCoordinate"] as! NSArray
                 let tripKey = tripDict["passengerKey"] as! String
                 let acceptanceStatus = tripDict["tripIsAccepted"] as! Bool
-                let destinationCoordinateArray = tripDict["destinationCoordinate"] as! NSArray
+                //let destinationCoordinateArray = tripDict["destinationCoordinate"] as! NSArray
                 
                 if acceptanceStatus == false {
                     DataService.instance.driverIsAvailable(key: self.currentUserId!, handler: { (available) in
@@ -89,6 +107,12 @@ class HomeVC: UIViewController, Alertable{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        DataService.instance.userIsDriver(userKey: currentUserId!, handler: { (status) in
+            if status == true{
+                self.buttonsForDriver(areHidden: true)
+            }
+        })
         
         DataService.instance.REF_TRIPS.observe(.childRemoved, with: { (removedTripSnapshot) in
             let removedTripDict = removedTripSnapshot.value as? [String: AnyObject]
@@ -122,6 +146,12 @@ class HomeVC: UIViewController, Alertable{
                                 let pickupPlacemark = MKPlacemark(coordinate: pickUpCoordinate)
                                 self.dropPinFor(placemark: pickupPlacemark)
                                 self.searchMapKitForResultsWithPolyline(forOriginMapItem: nil, withDestinationMapItem: MKMapItem(placemark: pickupPlacemark))
+                                self.setCustomRegion(forAnnotationType: .pickup, withCoordinate: pickUpCoordinate)
+                                
+                                self.actionForButton = .getDirectionsToPassenger
+                                self.actionBtn.setTitle("GET DIRECTIONS", for: .normal)
+                                
+                                self.buttonsForDriver(areHidden: false)
                             }
                         }
                     }
@@ -138,6 +168,24 @@ class HomeVC: UIViewController, Alertable{
             manager?.startUpdatingLocation()
         } else{
             manager?.requestAlwaysAuthorization()
+        }
+    }
+    
+    func buttonsForDriver(areHidden: Bool) {
+        if areHidden {
+            self.actionBtn.fadeTo(alpha: 0.0, withDuration: 0.2)
+            self.cancelBtn.fadeTo(alpha: 0.0, withDuration: 0.2)
+            self.centerMapBtn.fadeTo(alpha: 0.0, withDuration: 0.2)
+            self.actionBtn.isHidden = true
+            self.cancelBtn.isHidden = true
+            self.centerMapBtn.isHidden = true
+        } else {
+            self.actionBtn.fadeTo(alpha: 1.0, withDuration: 0.2)
+            self.cancelBtn.fadeTo(alpha: 1.0, withDuration: 0.2)
+            self.centerMapBtn.fadeTo(alpha: 1.0, withDuration: 0.2)
+            self.actionBtn.isHidden = false
+            self.cancelBtn.isHidden = false
+            self.centerMapBtn.isHidden = false
         }
     }
     
@@ -187,6 +235,7 @@ class HomeVC: UIViewController, Alertable{
                 }
             }
         })
+        revealingSplashView.heartAttack = true
     }
     
     func connectUserAndDriverForTrip() {
@@ -256,11 +305,7 @@ class HomeVC: UIViewController, Alertable{
     }    
 
     @IBAction func actionBtnPressed(_ sender: Any) {
-        UpdateService.instance.updateTripsWithCoordinatesUponRequest()
-        actionBtn.animateBtn(shouldLoad: true, withMsg: nil)
-        self.view.endEditing(true)
-        destinationTextField.isUserInteractionEnabled = false
-        
+        buttonSelector(forAction: actionForButton)
     }
     @IBAction func menuBtnPressed(_ sender: Any) {
         delegate?.toggleLeftPanel()
@@ -284,6 +329,42 @@ class HomeVC: UIViewController, Alertable{
         })
 
        
+    }
+    
+    func buttonSelector(forAction action: ButtonAction) {
+        switch action {
+        case .requestRide:
+            if destinationTextField.text != "" {
+                UpdateService.instance.updateTripsWithCoordinatesUponRequest()
+                actionBtn.animateBtn(shouldLoad: true, withMsg: nil)
+                cancelBtn.fadeTo(alpha: 1.0, withDuration: 0.2)
+                
+                self.view.endEditing(true)
+                destinationTextField.isUserInteractionEnabled = false
+            }
+            
+        case .getDirectionsToPassenger:
+            DataService.instance.driverIsOnTrip(driverKey: currentUserId!, handler: { (isOnTrip, driverKey, tripKey) in
+                if isOnTrip == true {
+                    DataService.instance.REF_TRIPS.child(tripKey!).observe(.value, with: { (tripSnapshot) in
+                        let tripDict = tripSnapshot.value as? Dictionary<String, AnyObject>
+                        let pickUpCoordinateArray = tripDict?["pickUpCoordinate"] as! NSArray
+                        let pickUpCoordinate = CLLocationCoordinate2D(latitude: pickUpCoordinateArray[0] as! CLLocationDegrees, longitude: pickUpCoordinateArray[1] as! CLLocationDegrees)
+                        
+                        let pickUpMapItem = MKMapItem(placemark: MKPlacemark(coordinate: pickUpCoordinate))
+                        pickUpMapItem.name = "Passenger Pickup Point"
+                        pickUpMapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
+                    })
+                }
+            })
+        case .startTrip:
+            print("start trip")
+        case .getDirectionsToDestination:
+            print("get directions to destination")
+        case .endTrip:
+            print("end trip")
+    
+        }
     }
     
 }
@@ -500,6 +581,46 @@ extension HomeVC: MKMapViewDelegate{
                 mapView.remove(overlay)
             }
         }
+    }
+    
+    func setCustomRegion(forAnnotationType type: AnnotationType, withCoordinate coordinate: CLLocationCoordinate2D) {
+        if type == .pickup {
+            let pickupRegion = CLCircularRegion(center: coordinate, radius: 100, identifier: "pickup")
+            manager?.startMonitoring(for: pickupRegion)
+        } else if type == .destination {
+            let destinationRegion = CLCircularRegion(center: coordinate, radius: 100, identifier: "destination")
+            manager?.startMonitoring(for: destinationRegion)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        DataService.instance.driverIsOnTrip(driverKey: currentUserId!, handler: { (isOnTrip, driverKey, passengerKey) in
+            if isOnTrip == true {
+                if region.identifier == "pickup" {
+                    self.actionBtn.setTitle("START TRIP", for: .normal)
+                    print("driver entered pickup region")
+                } else if region.identifier == "destination" {
+                    self.cancelBtn.fadeTo(alpha: 0.0, withDuration: 0.2)
+                    self.cancelBtn.isHidden = true
+                    self.actionBtn.setTitle("END TRIP", for: .normal)
+                }
+            }
+        })
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        DataService.instance.driverIsOnTrip(driverKey: currentUserId!, handler: { (isOnTrip, driverKey, passengerKey) in
+            if isOnTrip == true {
+                if region.identifier == "pickup" {
+                    self.actionBtn.setTitle("GET DIRECTIONS", for: .normal)
+                    print("driver exited pickup region")
+                } else if region.identifier == "destination" {
+                    self.cancelBtn.fadeTo(alpha: 0.0, withDuration: 0.2)
+                    self.cancelBtn.isHidden = true
+                    self.actionBtn.setTitle("GET DIRECTIONS", for: .normal)
+                }
+            }
+        })
     }
 }
 
