@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Firebase
 class PickUpVC: UIViewController {
     
     @IBOutlet weak var pickUpMapView: RoundMapView!
@@ -18,12 +19,24 @@ class PickUpVC: UIViewController {
     var regionRadius: CLLocationDistance = 2000
     var pin: MKPlacemark? = nil
     var locationPlacemark: MKPlacemark!
+    
+    var currentUserId = FIRAuth.auth()?.currentUser?.uid
     override func viewDidLoad() {
         super.viewDidLoad()
         pickUpMapView.delegate = self
         locationPlacemark = MKPlacemark(coordinate: pickUpCoordinate)
         dropPinFor(placemark: locationPlacemark)
-        centerMapOnLocation(location: locationPlacemark.location!)        
+        centerMapOnLocation(location: locationPlacemark.location!)
+        
+        DataService.instance.REF_TRIPS.child(passengerKey).observe(.value, with: { (tripSnapshot) in
+            if tripSnapshot.exists() {
+                if tripSnapshot.childSnapshot(forPath: "tripIsAccepted").value as? Bool == true{
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }else{
+                self.dismiss(animated: true, completion: nil)
+            }
+        })
     }
     
     func initData(coordinate: CLLocationCoordinate2D, passengerKey: String) {
@@ -32,9 +45,12 @@ class PickUpVC: UIViewController {
     }
 
     @IBAction func acceptTripPressed(_ sender: Any) {
+        UpdateService.instance.acceptTrip(withPassengerKey: passengerKey, forDriverKey: currentUserId!)
+        presentingViewController?.shouldPresentLoadingView(true)
     }
     
     @IBAction func cancelBtnPressed(_ sender: Any) {
+        UpdateService.instance.cancelTrip(withPassengerKey: passengerKey, forDriverKey: currentUserId!)
         dismiss(animated: true, completion: nil)
     }
     
