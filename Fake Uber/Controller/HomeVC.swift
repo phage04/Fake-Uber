@@ -80,6 +80,27 @@ class HomeVC: UIViewController, Alertable{
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DataService.instance.driverIsAvailable(key: self.currentUserId!, handler: { (status) in
+            if status == false{
+                DataService.instance.REF_TRIPS.observeSingleEvent(of: .value, with: { (tripSnapshot) in
+                    if let tripSnapshot = tripSnapshot.children.allObjects as? [FIRDataSnapshot] {
+                        for trip in tripSnapshot {
+                            if trip.childSnapshot(forPath: "driverKey").value as? String == self.currentUserId! {
+                                let pickUpCoordinateArray = trip.childSnapshot(forPath: "pickUpCoordinate").value as! NSArray
+                                let pickUpCoordinate = CLLocationCoordinate2D(latitude: pickUpCoordinateArray[0] as! CLLocationDegrees, longitude: pickUpCoordinateArray[1] as! CLLocationDegrees)
+                                let pickupPlacemark = MKPlacemark(coordinate: pickUpCoordinate)
+                                self.dropPinFor(placemark: pickupPlacemark)
+                                self.searchMapKitForResultsWithPolyline(forMapItem: MKMapItem(placemark: pickupPlacemark))
+                            }
+                        }
+                    }
+                })
+            }
+        })
+    }
+    
     func checkLocationAuthStatus() {
         if CLLocationManager.authorizationStatus() == .authorizedAlways {
             manager?.startUpdatingLocation()
@@ -227,6 +248,9 @@ extension HomeVC: MKMapViewDelegate{
         let lineRenderer = MKPolylineRenderer(overlay: self.route!.polyline)
         lineRenderer.strokeColor = UIColor.black.withAlphaComponent(0.75)
         lineRenderer.lineWidth = 3
+        
+        shouldPresentLoadingView(false)
+        
         zoom(toFitAnnotationsFromMapView: mapView)
         return lineRenderer
     }
@@ -283,7 +307,9 @@ extension HomeVC: MKMapViewDelegate{
             }
             self.route = response.routes[0]
             self.mapView.add(self.route!.polyline)
-            self.shouldPresentLoadingView(false)
+            
+            let delegate = AppDelegate.getAppDelegate()
+            delegate.window?.rootViewController?.shouldPresentLoadingView(false)
         }
     }
     
