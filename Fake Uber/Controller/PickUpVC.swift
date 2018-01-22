@@ -12,11 +12,23 @@ class PickUpVC: UIViewController {
     
     @IBOutlet weak var pickUpMapView: RoundMapView!
     
+    var pickUpCoordinate: CLLocationCoordinate2D!
+    var passengerKey: String!
+    
     var regionRadius: CLLocationDistance = 2000
     var pin: MKPlacemark? = nil
+    var locationPlacemark: MKPlacemark!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        pickUpMapView.delegate = self
+        locationPlacemark = MKPlacemark(coordinate: pickUpCoordinate)
+        dropPinFor(placemark: locationPlacemark)
+        centerMapOnLocation(location: locationPlacemark.location!)        
+    }
+    
+    func initData(coordinate: CLLocationCoordinate2D, passengerKey: String) {
+        self.pickUpCoordinate = coordinate
+        self.passengerKey = passengerKey
     }
 
     @IBAction func acceptTripPressed(_ sender: Any) {

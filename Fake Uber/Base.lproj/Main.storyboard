@@ -533,7 +533,7 @@
         <!--Pick UpVC-->
         <scene sceneID="oEO-0a-tfO">
             <objects>
-                <viewController storyboardIdentifier="PickUpVC.swift" id="rUC-fe-Wkc" customClass="PickUpVC" customModule="Fake_Uber" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PickUpVC" id="rUC-fe-Wkc" customClass="PickUpVC" customModule="Fake_Uber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cFW-d9-Usg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -581,19 +581,19 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MLd-Ly-2Xg">
-                                <rect key="frame" x="25" y="199" width="325" height="368"/>
+                                <rect key="frame" x="37.5" y="170" width="300" height="343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have a ride request!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFN-WJ-Dlg">
-                                        <rect key="frame" x="0.0" y="0.0" width="325" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="33"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZzC-Sn-sOR" customClass="RoundMapView" customModule="Fake_Uber" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="43" width="325" height="325"/>
+                                        <rect key="frame" x="0.0" y="43" width="300" height="300"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="325" id="Hod-L2-6Ia"/>
-                                            <constraint firstAttribute="height" constant="325" id="lOc-Z7-Vh5"/>
+                                            <constraint firstAttribute="width" constant="300" id="Hod-L2-6Ia"/>
+                                            <constraint firstAttribute="height" constant="300" id="lOc-Z7-Vh5"/>
                                         </constraints>
                                     </mapView>
                                 </subviews>
@@ -607,7 +607,7 @@
                             <constraint firstItem="MLd-Ly-2Xg" firstAttribute="centerX" secondItem="cFW-d9-Usg" secondAttribute="centerX" id="TO4-H3-85w"/>
                             <constraint firstItem="PQV-80-Xnf" firstAttribute="trailing" secondItem="jbE-Fe-dES" secondAttribute="trailing" constant="16" id="U9i-V1-NKx"/>
                             <constraint firstItem="jbE-Fe-dES" firstAttribute="leading" secondItem="PQV-80-Xnf" secondAttribute="leading" constant="16" id="cXP-Ho-Vbf"/>
-                            <constraint firstItem="jbE-Fe-dES" firstAttribute="top" secondItem="MLd-Ly-2Xg" secondAttribute="bottom" constant="20" id="eNk-g1-ckP"/>
+                            <constraint firstItem="MLd-Ly-2Xg" firstAttribute="top" secondItem="J2C-Dp-Smi" secondAttribute="bottom" constant="20" id="w8d-jZ-v0l"/>
                             <constraint firstItem="PQV-80-Xnf" firstAttribute="bottom" secondItem="jbE-Fe-dES" secondAttribute="bottom" constant="20" id="xFd-lb-b18"/>
                             <constraint firstItem="J2C-Dp-Smi" firstAttribute="centerX" secondItem="cFW-d9-Usg" secondAttribute="centerX" id="zUk-rb-XsT"/>
                         </constraints>

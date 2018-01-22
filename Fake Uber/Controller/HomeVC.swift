@@ -55,6 +55,29 @@ class HomeVC: UIViewController, Alertable{
         revealingSplashView.animationType = SplashAnimationType.heartBeat
         revealingSplashView.startAnimation()        
         revealingSplashView.heartAttack = true
+        
+        UpdateService.instance.observeTrips { (tripDict) in
+            if let tripDict = tripDict {
+                let pickUpCoordinateArray = tripDict["pickUpCoordinate"] as! NSArray
+                let tripKey = tripDict["passengerKey"] as! String
+                let acceptanceStatus = tripDict["tripIsAccepted"] as! Bool
+                let destinationCoordinateArray = tripDict["destinationCoordinate"] as! NSArray
+                
+                if acceptanceStatus == false {
+                    DataService.instance.driverIsAvailable(key: self.currentUserId!, handler: { (available) in
+                        if let available = available {
+                            if available == true {
+                                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                                let pickUpVC = storyboard.instantiateViewController(withIdentifier: "PickUpVC") as? PickUpVC
+                                pickUpVC?.initData(coordinate: CLLocationCoordinate2D(latitude: pickUpCoordinateArray[0] as! CLLocationDegrees, longitude: pickUpCoordinateArray[1] as! CLLocationDegrees), passengerKey: tripKey)
+                                self.present(pickUpVC!, animated: true, completion: nil)
+                            }
+                        }
+                    })
+                }
+                
+            }
+        }
     }
     
     func checkLocationAuthStatus() {
@@ -119,7 +142,11 @@ class HomeVC: UIViewController, Alertable{
     }
 
     @IBAction func actionBtnPressed(_ sender: Any) {
+        UpdateService.instance.updateTripsWithCoordinatesUponRequest()
         actionBtn.animateBtn(shouldLoad: true, withMsg: nil)
+        self.view.endEditing(true)
+        destinationTextField.isUserInteractionEnabled = false
+        
     }
     @IBAction func menuBtnPressed(_ sender: Any) {
         delegate?.toggleLeftPanel()
