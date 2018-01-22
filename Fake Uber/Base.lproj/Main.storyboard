@@ -183,21 +183,38 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuN-ag-IpG">
+                                <rect key="frame" x="135" y="532" width="104" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="6Gc-No-uRr"/>
+                                    <constraint firstAttribute="width" constant="104" id="Fp7-et-fsW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                <state key="normal" title="CANCEL TRIP">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QEl-j8-HLd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3WI-er-eha" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2Rk-AQ-9l6"/>
                             <constraint firstItem="HBO-lf-jBr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9Yi-Qp-gV1"/>
                             <constraint firstItem="3WI-er-eha" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="AtR-Bl-lwJ"/>
+                            <constraint firstItem="xuN-ag-IpG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CQa-AQ-9eS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4oU-J8-h9l" secondAttribute="trailing" constant="10" id="G1R-ix-6kX"/>
                             <constraint firstItem="Cla-zn-Ahe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Heq-aT-jWE"/>
                             <constraint firstItem="uFB-7q-WO8" firstAttribute="top" secondItem="4oU-J8-h9l" secondAttribute="bottom" constant="8" id="IrI-Xp-IQf"/>
                             <constraint firstItem="3WI-er-eha" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NY8-hE-GzR"/>
                             <constraint firstItem="uFB-7q-WO8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="WxQ-MT-3CK"/>
                             <constraint firstItem="Lrx-D2-I0d" firstAttribute="centerY" secondItem="uFB-7q-WO8" secondAttribute="centerY" id="YWW-FO-CVm"/>
+                            <constraint firstItem="j8g-uE-mi3" firstAttribute="centerY" secondItem="xuN-ag-IpG" secondAttribute="centerY" id="ZfP-bG-9OC"/>
                             <constraint firstItem="Lrx-D2-I0d" firstAttribute="centerX" secondItem="uFB-7q-WO8" secondAttribute="centerX" id="a1y-Lw-6YD"/>
                             <constraint firstItem="4oU-J8-h9l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="c3j-hT-2W1"/>
                             <constraint firstItem="3WI-er-eha" firstAttribute="top" secondItem="j8g-uE-mi3" secondAttribute="bottom" constant="8" id="c51-Gd-XfZ"/>
+                            <constraint firstItem="3WI-er-eha" firstAttribute="top" secondItem="xuN-ag-IpG" secondAttribute="bottom" constant="21" id="dPK-xN-9Qg"/>
                             <constraint firstItem="Cla-zn-Ahe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ebn-wq-yyB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uFB-7q-WO8" secondAttribute="trailing" constant="10" id="j2U-UH-QKY"/>
                             <constraint firstItem="Cla-zn-Ahe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jQ8-aj-SVr"/>
@@ -212,6 +229,7 @@
                     </view>
                     <connections>
                         <outlet property="actionBtn" destination="3wd-Ba-Ev7" id="Xgi-0I-6ve"/>
+                        <outlet property="cancelBtn" destination="xuN-ag-IpG" id="QNn-QB-ab7"/>
                         <outlet property="centerMapBtn" destination="j8g-uE-mi3" id="4iW-70-fXA"/>
                         <outlet property="destinationCircle" destination="fX3-fZ-Med" id="ZI8-AU-Vj5"/>
                         <outlet property="destinationTextField" destination="btj-jz-oPw" id="cZA-le-Awm"/>
