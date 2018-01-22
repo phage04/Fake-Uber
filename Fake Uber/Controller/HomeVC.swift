@@ -89,25 +89,6 @@ class HomeVC: UIViewController, Alertable{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        DataService.instance.driverIsAvailable(key: self.currentUserId!, handler: { (status) in
-            if status == false{
-                DataService.instance.REF_TRIPS.observeSingleEvent(of: .value, with: { (tripSnapshot) in
-                    if let tripSnapshot = tripSnapshot.children.allObjects as? [FIRDataSnapshot] {
-                        for trip in tripSnapshot {
-                            if trip.childSnapshot(forPath: "driverKey").value as? String == self.currentUserId! {
-                                let pickUpCoordinateArray = trip.childSnapshot(forPath: "pickUpCoordinate").value as! NSArray
-                                let pickUpCoordinate = CLLocationCoordinate2D(latitude: pickUpCoordinateArray[0] as! CLLocationDegrees, longitude: pickUpCoordinateArray[1] as! CLLocationDegrees)
-                                let pickupPlacemark = MKPlacemark(coordinate: pickUpCoordinate)
-                                self.dropPinFor(placemark: pickupPlacemark)
-                                self.searchMapKitForResultsWithPolyline(forOriginMapItem: nil, withDestinationMapItem: MKMapItem(placemark: pickupPlacemark))
-                            }
-                        }
-                    }
-                })
-            }
-        })
-        
-        connectUserAndDriverForTrip()
         
         DataService.instance.REF_TRIPS.observe(.childRemoved, with: { (removedTripSnapshot) in
             let removedTripDict = removedTripSnapshot.value as? [String: AnyObject]
@@ -129,6 +110,26 @@ class HomeVC: UIViewController, Alertable{
                 }
             })
         })
+        
+        DataService.instance.driverIsOnTrip(driverKey: self.currentUserId!, handler: { (isOnTrip, driverKey, tripKey) in
+            if isOnTrip == true {
+                DataService.instance.REF_TRIPS.observeSingleEvent(of: .value, with: { (tripSnapshot) in
+                    if let tripSnapshot = tripSnapshot.children.allObjects as? [FIRDataSnapshot] {
+                        for trip in tripSnapshot {
+                            if trip.childSnapshot(forPath: "driverKey").value as? String == self.currentUserId! {
+                                let pickUpCoordinateArray = trip.childSnapshot(forPath: "pickUpCoordinate").value as! NSArray
+                                let pickUpCoordinate = CLLocationCoordinate2D(latitude: pickUpCoordinateArray[0] as! CLLocationDegrees, longitude: pickUpCoordinateArray[1] as! CLLocationDegrees)
+                                let pickupPlacemark = MKPlacemark(coordinate: pickUpCoordinate)
+                                self.dropPinFor(placemark: pickupPlacemark)
+                                self.searchMapKitForResultsWithPolyline(forOriginMapItem: nil, withDestinationMapItem: MKMapItem(placemark: pickupPlacemark))
+                            }
+                        }
+                    }
+                })
+            }
+        })
+        
+        connectUserAndDriverForTrip()
         
     }
     
@@ -362,8 +363,7 @@ extension HomeVC: MKMapViewDelegate{
         lineRenderer.lineWidth = 3
         
         shouldPresentLoadingView(false)
-        
-        zoom(toFitAnnotationsFromMapView: mapView, forActiveTripWithDriver: false, withKey: nil)
+   
         return lineRenderer
     }
     
@@ -428,6 +428,8 @@ extension HomeVC: MKMapViewDelegate{
             if self.mapView.overlays.count == 0 {
                 self.mapView.add(self.route!.polyline)
             }
+            
+            self.zoom(toFitAnnotationsFromMapView: self.mapView, forActiveTripWithDriver: false, withKey: nil)
             
             let delegate = AppDelegate.getAppDelegate()
             delegate.window?.rootViewController?.shouldPresentLoadingView(false)
