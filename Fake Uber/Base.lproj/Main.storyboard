@@ -93,6 +93,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="3wd-Ba-Ev7" firstAttribute="centerX" secondItem="3WI-er-eha" secondAttribute="centerX" id="Dyc-T3-Wyw"/>
                                     <constraint firstAttribute="height" constant="80" id="Qxp-Yx-pLP"/>
                                     <constraint firstItem="3wd-Ba-Ev7" firstAttribute="top" secondItem="3WI-er-eha" secondAttribute="top" id="e6D-lg-U9v"/>
                                     <constraint firstItem="3wd-Ba-Ev7" firstAttribute="leading" secondItem="3WI-er-eha" secondAttribute="leading" constant="16" id="nGx-qy-L93"/>

@@ -84,6 +84,6 @@ class UpdateService{
         DataService.instance.REF_USERS.child(passengerKey).child("tripCoordinate").removeValue()
         if driverKey != nil {
             DataService.instance.REF_DRIVERS.child(driverKey!).updateChildValues(["driverIsOnTrip": false])
-        }        
+        } 
     }
 }
