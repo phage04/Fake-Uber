@@ -388,10 +388,26 @@ class HomeVC: UIViewController, Alertable{
                 }
             })
         case .getDirectionsToDestination:
-            print("get directions to destination")
+            DataService.instance.driverIsOnTrip(driverKey: self.currentUserId!, handler: { (isOnTrip, driverKey, tripKey) in
+                if isOnTrip == true {
+                    DataService.instance.REF_TRIPS.child(tripKey!).child(USER_DESTINATION_COORDINATE).observe(.value, with: { (snapshot) in
+                        let destinationCoordinateArray = snapshot.value as! NSArray
+                        let destinationCoordinate = CLLocationCoordinate2D(latitude: destinationCoordinateArray[0] as! CLLocationDegrees, longitude: destinationCoordinateArray[1] as! CLLocationDegrees)
+                        let destinationPlacemark = MKPlacemark(coordinate: destinationCoordinate)
+                        let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+                        
+                        destinationMapItem.name = MSG_PASSENGER_DESTINATION
+                        destinationMapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving])
+                    })
+                }
+            })
         case .endTrip:
-            print("end trip")
-    
+            DataService.instance.driverIsOnTrip(driverKey: self.currentUserId!, handler: { (isOnTrip, driverKey, tripKey) in
+                if isOnTrip == true {
+                    UpdateService.instance.cancelTrip(withPassengerKey: tripKey!, forDriverKey: driverKey!)
+                    self.buttonsForDriver(areHidden: true)
+                }
+            })
         }
     }
     
@@ -532,8 +548,7 @@ extension HomeVC: MKMapViewDelegate{
                 self.showAlert(ERROR_MSG_UNEXPECTED_ERROR)
                 return
             }
-            self.route = response.routes[0]
-            
+            self.route = response.routes[0]            
            
             self.mapView.add(self.route!.polyline)
             
@@ -630,6 +645,7 @@ extension HomeVC: MKMapViewDelegate{
                 } else if region.identifier == REGION_DESTINATION {
                     self.cancelBtn.fadeTo(alpha: 0.0, withDuration: 0.2)
                     self.cancelBtn.isHidden = true
+                    self.actionForButton = .endTrip
                     self.actionBtn.setTitle(MSG_END_TRIP, for: .normal)
                 }
             }
