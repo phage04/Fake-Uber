@@ -534,9 +534,8 @@ extension HomeVC: MKMapViewDelegate{
             }
             self.route = response.routes[0]
             
-            if self.mapView.overlays.count == 0 {
-                self.mapView.add(self.route!.polyline)
-            }
+           
+            self.mapView.add(self.route!.polyline)
             
             self.zoom(toFitAnnotationsFromMapView: self.mapView, forActiveTripWithDriver: false, withKey: nil)
             
