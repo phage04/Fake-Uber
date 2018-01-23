@@ -52,7 +52,7 @@ class LeftSidePanelVC: UIViewController {
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshot {
                     if snap.key == FIRAuth.auth()?.currentUser?.uid {
-                        self.userAccountTypeLabel.text = "PASSENGER"
+                        self.userAccountTypeLabel.text = ACCOUNT_TYPE_PASSENGER
                         self.pickUpSwitch.isHidden = true
                         self.pickUpMode.isHidden = true
                     }
@@ -64,12 +64,12 @@ class LeftSidePanelVC: UIViewController {
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshot {
                     if snap.key == FIRAuth.auth()?.currentUser?.uid {
-                        self.userAccountTypeLabel.text = "DRIVER"
+                        self.userAccountTypeLabel.text = ACCOUNT_TYPE_DRIVER
                         self.pickUpSwitch.isHidden = false
                         self.pickUpMode.isHidden = false
                         
                         
-                        let switchStatus = snap.childSnapshot(forPath: "isPickUpModeEnabled").value as! Bool
+                        let switchStatus = snap.childSnapshot(forPath: ACCOUNT_PICKUP_MODE_ENABLED).value as! Bool
                         self.pickUpSwitch.isOn = switchStatus
                         if self.pickUpSwitch.isOn == true {
                             self.pickUpMode.text = "PICKUP MODE ENABLED"
@@ -110,11 +110,11 @@ class LeftSidePanelVC: UIViewController {
         if self.pickUpSwitch.isOn == true {
             self.pickUpMode.text = "PICKUP MODE ENABLED"
             appDelegate.menuContainerVC.toggleLeftPanel()
-            DataService.instance.REF_DRIVERS.child((FIRAuth.auth()?.currentUser?.uid)!).updateChildValues(["isPickUpModeEnabled": true])
+            DataService.instance.REF_DRIVERS.child((FIRAuth.auth()?.currentUser?.uid)!).updateChildValues([ACCOUNT_PICKUP_MODE_ENABLED: true])
         }else{
             self.pickUpMode.text = "PICKUP MODE DISABLED"
             appDelegate.menuContainerVC.toggleLeftPanel()
-            DataService.instance.REF_DRIVERS.child((FIRAuth.auth()?.currentUser?.uid)!).updateChildValues(["isPickUpModeEnabled": false])
+            DataService.instance.REF_DRIVERS.child((FIRAuth.auth()?.currentUser?.uid)!).updateChildValues([ACCOUNT_PICKUP_MODE_ENABLED: false])
         }
     }
 }

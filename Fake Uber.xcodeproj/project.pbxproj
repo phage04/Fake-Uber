@@ -28,6 +28,7 @@
 		DEA9DA87201189360033F75C /* LeftSidePanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA86201189360033F75C /* LeftSidePanelVC.swift */; };
 		DEA9DA89201189D40033F75C /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA88201189D40033F75C /* ContainerVC.swift */; };
 		DEA9DA8C20118E390033F75C /* centerVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DA8B20118E390033F75C /* centerVCDelegate.swift */; };
+		DEB2876F2016CB9E00D559D7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB2876E2016CB9E00D559D7 /* Constants.swift */; };
 		DEF64BFA20124B0200DF359C /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF64BF920124B0200DF359C /* UIViewExt.swift */; };
 		DEF64BFC2012525E00DF359C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF64BFB2012525E00DF359C /* LoginVC.swift */; };
 		DEF64BFE20126ED000DF359C /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF64BFD20126ED000DF359C /* RoundedCornerTextField.swift */; };
@@ -61,6 +62,7 @@
 		DEA9DA86201189360033F75C /* LeftSidePanelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSidePanelVC.swift; sourceTree = "<group>"; };
 		DEA9DA88201189D40033F75C /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		DEA9DA8B20118E390033F75C /* centerVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = centerVCDelegate.swift; sourceTree = "<group>"; };
+		DEB2876E2016CB9E00D559D7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DEF64BF920124B0200DF359C /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		DEF64BFB2012525E00DF359C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DEF64BFD20126ED000DF359C /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		DEA9DA6620112FAD0033F75C /* Fake Uber */ = {
 			isa = PBXGroup;
 			children = (
+				DEB2876D2016CB8500D559D7 /* Resources */,
 				DEF64C01201284B300DF359C /* Services */,
 				DEF64BF820124AEE00DF359C /* Extensions */,
 				DEA9DA8A20118E250033F75C /* Protocols */,
@@ -176,6 +179,14 @@
 				DEA58DF7201539C6004F421C /* Alertable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DEB2876D2016CB8500D559D7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DEB2876E2016CB9E00D559D7 /* Constants.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		DEF64BF820124AEE00DF359C /* Extensions */ = {
@@ -331,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEA9DA8520116FA20033F75C /* RoundedShadowButton.swift in Sources */,
+				DEB2876F2016CB9E00D559D7 /* Constants.swift in Sources */,
 				DEF64C03201284C300DF359C /* DataService.swift in Sources */,
 				DEA58DFA20154366004F421C /* PickUpVC.swift in Sources */,
 				DEA9DA87201189360033F75C /* LeftSidePanelVC.swift in Sources */,

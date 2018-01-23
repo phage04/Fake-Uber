@@ -48,7 +48,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, Alertable {
                                 let userData = ["provider": user.providerID] as [String: Any]
                                 DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: false)
                             } else{
-                                let userData = ["provider": user.providerID, "userIsDriver": true, "isPickUpModeEnabled": false, "driverIsOnTrip": false] as [String: Any]
+                                let userData = ["provider": user.providerID, USER_IS_DRIVER: true, ACCOUNT_PICKUP_MODE_ENABLED: false, DRIVER_IS_ON_TRIP: false] as [String: Any]
                                 DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: true)
                             }
                         }
@@ -59,9 +59,9 @@ class LoginVC: UIViewController, UITextFieldDelegate, Alertable {
                         if let errorCode = FIRAuthErrorCode(rawValue: error!._code) {
                             switch errorCode {
                             case .errorCodeEmailAlreadyInUse:
-                                self.showAlert("Email already in use.")
+                                self.showAlert(ERROR_MSG_EMAIL_ALREADY_IN_USE)
                             case .errorCodeWrongPassword:
-                                self.showAlert("Wrong password.")
+                                self.showAlert(ERROR_MSG_WRONG_PASSWORD)
                             case .errorCodeUserNotFound:
                         
                                 FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
@@ -69,11 +69,11 @@ class LoginVC: UIViewController, UITextFieldDelegate, Alertable {
                                         if let errorCode = FIRAuthErrorCode(rawValue: error!._code) {
                                             switch errorCode {
                                             case .errorCodeInvalidEmail:
-                                                self.showAlert("Email invalid. Please try again.")
+                                                self.showAlert(ERROR_MSG_INVALID_EMAIL)
                                             case .errorCodeEmailAlreadyInUse:
-                                                self.showAlert("Email already in use.")
+                                                self.showAlert(ERROR_MSG_EMAIL_ALREADY_IN_USE)
                                             default:
-                                                self.showAlert("Something went wrong. Please try again.")
+                                                self.showAlert(ERROR_MSG_UNEXPECTED_ERROR)
                                             }
                                         }
                                     }else{
@@ -82,7 +82,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, Alertable {
                                                 let userData = ["provider": user.providerID] as [String: Any]
                                                 DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: false)
                                             } else{
-                                                let userData = ["provider": user.providerID, "userIsDriver": true, "isPickUpModeEnabled": false, "driverIsOnTrip": false] as [String: Any]
+                                                let userData = ["provider": user.providerID, USER_IS_DRIVER: true, ACCOUNT_PICKUP_MODE_ENABLED: false, DRIVER_IS_ON_TRIP: false] as [String: Any]
                                                 DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: true)
                                             }
                                         }
@@ -91,7 +91,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, Alertable {
                                     self.dismiss(animated: true, completion: nil)
                                 })
                             default:
-                                self.showAlert("Something went wrong. Please try again.")
+                                self.showAlert(ERROR_MSG_UNEXPECTED_ERROR)
                             }
                             
                         }
