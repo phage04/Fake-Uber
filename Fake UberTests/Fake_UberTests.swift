@@ -29,7 +29,7 @@ class Fake_UberTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func test_UserIsDriverASYNC() {
         
         let userKey = "DRHlZGDe98bupuFBQlhNlIRsgVu2"
         let promise = expectation(description: "user is driver")
@@ -50,8 +50,15 @@ class Fake_UberTests: XCTestCase {
         
         
         waitForExpectations(timeout: 5, handler: nil)
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func test_VolumeOfRectangleSYNC() {
+        let length = 5
+        let width = 6
+        let height = 7
+        let volume = sessionUnderTest.returnVolumeOfRectangle(length: length, width: width, height: height)
+        
+        XCTAssertEqual(volume, 210, "returnVolumeOfRectangle is NOT 210 - SUMTIN IZ WRONG")
     }
     
 }

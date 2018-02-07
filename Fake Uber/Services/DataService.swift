@@ -117,6 +117,10 @@ class DataService {
         })
     }
     
+    func returnVolumeOfRectangle(length: Int, width: Int, height: Int) -> Int {
+        let volume = length * width * height
+        return volume
+    }
     
     
 }
