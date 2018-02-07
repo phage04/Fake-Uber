@@ -9,8 +9,8 @@
 import XCTest
 
 class Fake_UberUITests: XCTestCase {
-    var app: XCUIApplication!
     
+    var app: XCUIApplication!
     override func setUp() {
         super.setUp()
         
@@ -28,26 +28,17 @@ class Fake_UberUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testUIBehavior() {
         
+        let destinationTextField = app.textFields["Where are you going?"]
+        let resultTable = app.tables["Empty list"]
         
- 
-        let menuBtn = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 2).children(matching: .button).element
-        let SignUpLogInBtnMenu = app.buttons["Sign Up /Login"]
-        let SignUpLognInBtnExecute = app.buttons["Sign Up / Login"]
-        let emailTextField = app.textFields["email"]
-        let passwordSecureTextField = app.secureTextFields["password"]
+        XCTAssertFalse(resultTable.exists)
+        XCTAssertTrue(destinationTextField.exists)
+        destinationTextField.tap()
+        destinationTextField.typeText("in n out")
+        XCTAssertTrue(resultTable.exists)
         
-        menuBtn.tap()
-        SignUpLogInBtnMenu.tap()
-        emailTextField.tap()
-        emailTextField.typeText("test@thing.com")
-        passwordSecureTextField.tap()
-        passwordSecureTextField.typeText("lyle5953")
-        SignUpLognInBtnExecute.tap()
-        
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
 }

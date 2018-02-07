@@ -11,6 +11,7 @@
 		BEFE195A27F3193FE1BC76EB /* Pods_Fake_Uber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623B2F6B5AE6322F14C44849 /* Pods_Fake_Uber.framework */; };
 		DE416808202B2877007D9D31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE416807202B2877007D9D31 /* GoogleService-Info.plist */; };
 		DE43AFF0202B413700D01844 /* Fake_UberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE43AFEF202B413700D01844 /* Fake_UberTests.swift */; };
+		DE43AFFE202B68CD00D01844 /* Fake_UberUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE43AFFD202B68CD00D01844 /* Fake_UberUITests.swift */; };
 		DEA58DF02013FD64004F421C /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DEF2013FD64004F421C /* UpdateService.swift */; };
 		DEA58DF22014134B004F421C /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DF12014134B004F421C /* DriverAnnotation.swift */; };
 		DEA58DF420144C0F004F421C /* PassengerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DF320144C0F004F421C /* PassengerAnnotation.swift */; };
@@ -46,6 +47,13 @@
 			remoteGlobalIDString = DEA9DA6320112FAD0033F75C;
 			remoteInfo = "Fake Uber";
 		};
+		DE43B000202B68CD00D01844 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEA9DA5C20112FAD0033F75C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEA9DA6320112FAD0033F75C;
+			remoteInfo = "Fake Uber";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +67,9 @@
 		DE43AFED202B413700D01844 /* Fake UberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fake UberTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE43AFEF202B413700D01844 /* Fake_UberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fake_UberTests.swift; sourceTree = "<group>"; };
 		DE43AFF1202B413700D01844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE43AFFB202B68CD00D01844 /* Fake UberUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fake UberUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE43AFFD202B68CD00D01844 /* Fake_UberUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fake_UberUITests.swift; sourceTree = "<group>"; };
+		DE43AFFF202B68CD00D01844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEA58DEF2013FD64004F421C /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
 		DEA58DF12014134B004F421C /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		DEA58DF320144C0F004F421C /* PassengerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerAnnotation.swift; sourceTree = "<group>"; };
@@ -94,6 +105,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				03889721491EA2010C90E1B3 /* Pods_Fake_UberTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE43AFF8202B68CD00D01844 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,11 +155,21 @@
 			path = "Fake UberTests";
 			sourceTree = "<group>";
 		};
+		DE43AFFC202B68CD00D01844 /* Fake UberUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DE43AFFD202B68CD00D01844 /* Fake_UberUITests.swift */,
+				DE43AFFF202B68CD00D01844 /* Info.plist */,
+			);
+			path = "Fake UberUITests";
+			sourceTree = "<group>";
+		};
 		DEA9DA5B20112FAD0033F75C = {
 			isa = PBXGroup;
 			children = (
 				DEA9DA6620112FAD0033F75C /* Fake Uber */,
 				DE43AFEE202B413700D01844 /* Fake UberTests */,
+				DE43AFFC202B68CD00D01844 /* Fake UberUITests */,
 				DEA9DA6520112FAD0033F75C /* Products */,
 				A57CC9EF7B2A1C5FB78C7A1A /* Pods */,
 				17ECDCA2A3F9CFB9D7C12269 /* Frameworks */,
@@ -153,6 +181,7 @@
 			children = (
 				DEA9DA6420112FAD0033F75C /* Fake Uber.app */,
 				DE43AFED202B413700D01844 /* Fake UberTests.xctest */,
+				DE43AFFB202B68CD00D01844 /* Fake UberUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -271,6 +300,24 @@
 			productReference = DE43AFED202B413700D01844 /* Fake UberTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DE43AFFA202B68CD00D01844 /* Fake UberUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE43B004202B68CD00D01844 /* Build configuration list for PBXNativeTarget "Fake UberUITests" */;
+			buildPhases = (
+				DE43AFF7202B68CD00D01844 /* Sources */,
+				DE43AFF8202B68CD00D01844 /* Frameworks */,
+				DE43AFF9202B68CD00D01844 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE43B001202B68CD00D01844 /* PBXTargetDependency */,
+			);
+			name = "Fake UberUITests";
+			productName = "Fake UberUITests";
+			productReference = DE43AFFB202B68CD00D01844 /* Fake UberUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		DEA9DA6320112FAD0033F75C /* Fake Uber */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEA9DA7620112FAD0033F75C /* Build configuration list for PBXNativeTarget "Fake Uber" */;
@@ -306,6 +353,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = DEA9DA6320112FAD0033F75C;
 					};
+					DE43AFFA202B68CD00D01844 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DEA9DA6320112FAD0033F75C;
+					};
 					DEA9DA6320112FAD0033F75C = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -327,12 +379,20 @@
 			targets = (
 				DEA9DA6320112FAD0033F75C /* Fake Uber */,
 				DE43AFEC202B413700D01844 /* Fake UberTests */,
+				DE43AFFA202B68CD00D01844 /* Fake UberUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DE43AFEB202B413700D01844 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE43AFF9202B68CD00D01844 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -470,6 +530,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DE43AFF7202B68CD00D01844 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE43AFFE202B68CD00D01844 /* Fake_UberUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DEA9DA6020112FAD0033F75C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -506,6 +574,11 @@
 			isa = PBXTargetDependency;
 			target = DEA9DA6320112FAD0033F75C /* Fake Uber */;
 			targetProxy = DE43AFF2202B413700D01844 /* PBXContainerItemProxy */;
+		};
+		DE43B001202B68CD00D01844 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEA9DA6320112FAD0033F75C /* Fake Uber */;
+			targetProxy = DE43B000202B68CD00D01844 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -562,6 +635,36 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fake Uber.app/Fake Uber";
+			};
+			name = Release;
+		};
+		DE43B002202B68CD00D01844 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H27XDZ2QBG;
+				INFOPLIST_FILE = "Fake UberUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.LJover.Fake-UberUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Fake Uber";
+			};
+			name = Debug;
+		};
+		DE43B003202B68CD00D01844 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H27XDZ2QBG;
+				INFOPLIST_FILE = "Fake UberUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.LJover.Fake-UberUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Fake Uber";
 			};
 			name = Release;
 		};
@@ -712,6 +815,15 @@
 			buildConfigurations = (
 				DE43AFF4202B413700D01844 /* Debug */,
 				DE43AFF5202B413700D01844 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE43B004202B68CD00D01844 /* Build configuration list for PBXNativeTarget "Fake UberUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE43B002202B68CD00D01844 /* Debug */,
+				DE43B003202B68CD00D01844 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
