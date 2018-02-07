@@ -12,4 +12,9 @@ target 'Fake Uber' do
   pod 'Firebase/Database'
   pod 'RevealingSplashView'
 
+  target 'Fake UberTests' do
+        inherit! :search_paths
+        pod 'Firebase'
+    end
+
 end

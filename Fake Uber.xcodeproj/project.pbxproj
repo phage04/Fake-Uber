@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03889721491EA2010C90E1B3 /* Pods_Fake_UberTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24A4E49B876A5C7C38B6B77E /* Pods_Fake_UberTests.framework */; };
 		BEFE195A27F3193FE1BC76EB /* Pods_Fake_Uber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623B2F6B5AE6322F14C44849 /* Pods_Fake_Uber.framework */; };
 		DE416808202B2877007D9D31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE416807202B2877007D9D31 /* GoogleService-Info.plist */; };
+		DE43AFF0202B413700D01844 /* Fake_UberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE43AFEF202B413700D01844 /* Fake_UberTests.swift */; };
 		DEA58DF02013FD64004F421C /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DEF2013FD64004F421C /* UpdateService.swift */; };
 		DEA58DF22014134B004F421C /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DF12014134B004F421C /* DriverAnnotation.swift */; };
 		DEA58DF420144C0F004F421C /* PassengerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DF320144C0F004F421C /* PassengerAnnotation.swift */; };
@@ -36,11 +38,27 @@
 		DEF64C03201284C300DF359C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF64C02201284C300DF359C /* DataService.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DE43AFF2202B413700D01844 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEA9DA5C20112FAD0033F75C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEA9DA6320112FAD0033F75C;
+			remoteInfo = "Fake Uber";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		24A4E49B876A5C7C38B6B77E /* Pods_Fake_UberTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fake_UberTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		623B2F6B5AE6322F14C44849 /* Pods_Fake_Uber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fake_Uber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BB4EF5308190A556AEE1700 /* Pods-Fake UberTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fake UberTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fake UberTests/Pods-Fake UberTests.release.xcconfig"; sourceTree = "<group>"; };
 		B595A0D9463AAEAC2B5BA4DD /* Pods-Fake Uber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fake Uber.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fake Uber/Pods-Fake Uber.release.xcconfig"; sourceTree = "<group>"; };
 		C4D914200DD5AE20EE24AA56 /* Pods-Fake Uber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fake Uber.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fake Uber/Pods-Fake Uber.debug.xcconfig"; sourceTree = "<group>"; };
+		CA893796D9571EDDAAAA2959 /* Pods-Fake UberTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fake UberTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fake UberTests/Pods-Fake UberTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE416807202B2877007D9D31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DE43AFED202B413700D01844 /* Fake UberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fake UberTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE43AFEF202B413700D01844 /* Fake_UberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fake_UberTests.swift; sourceTree = "<group>"; };
+		DE43AFF1202B413700D01844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEA58DEF2013FD64004F421C /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
 		DEA58DF12014134B004F421C /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		DEA58DF320144C0F004F421C /* PassengerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerAnnotation.swift; sourceTree = "<group>"; };
@@ -71,6 +89,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DE43AFEA202B413700D01844 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03889721491EA2010C90E1B3 /* Pods_Fake_UberTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DEA9DA6120112FAD0033F75C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -86,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				623B2F6B5AE6322F14C44849 /* Pods_Fake_Uber.framework */,
+				24A4E49B876A5C7C38B6B77E /* Pods_Fake_UberTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -95,14 +122,26 @@
 			children = (
 				C4D914200DD5AE20EE24AA56 /* Pods-Fake Uber.debug.xcconfig */,
 				B595A0D9463AAEAC2B5BA4DD /* Pods-Fake Uber.release.xcconfig */,
+				CA893796D9571EDDAAAA2959 /* Pods-Fake UberTests.debug.xcconfig */,
+				6BB4EF5308190A556AEE1700 /* Pods-Fake UberTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DE43AFEE202B413700D01844 /* Fake UberTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE43AFEF202B413700D01844 /* Fake_UberTests.swift */,
+				DE43AFF1202B413700D01844 /* Info.plist */,
+			);
+			path = "Fake UberTests";
 			sourceTree = "<group>";
 		};
 		DEA9DA5B20112FAD0033F75C = {
 			isa = PBXGroup;
 			children = (
 				DEA9DA6620112FAD0033F75C /* Fake Uber */,
+				DE43AFEE202B413700D01844 /* Fake UberTests */,
 				DEA9DA6520112FAD0033F75C /* Products */,
 				A57CC9EF7B2A1C5FB78C7A1A /* Pods */,
 				17ECDCA2A3F9CFB9D7C12269 /* Frameworks */,
@@ -113,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				DEA9DA6420112FAD0033F75C /* Fake Uber.app */,
+				DE43AFED202B413700D01844 /* Fake UberTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,6 +250,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DE43AFEC202B413700D01844 /* Fake UberTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE43AFF6202B413700D01844 /* Build configuration list for PBXNativeTarget "Fake UberTests" */;
+			buildPhases = (
+				FA4F006BF37AA9607F299D21 /* [CP] Check Pods Manifest.lock */,
+				DE43AFE9202B413700D01844 /* Sources */,
+				DE43AFEA202B413700D01844 /* Frameworks */,
+				DE43AFEB202B413700D01844 /* Resources */,
+				A1F2328B3297F8438745F3B8 /* [CP] Embed Pods Frameworks */,
+				100952F37F87CD6717583140 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE43AFF3202B413700D01844 /* PBXTargetDependency */,
+			);
+			name = "Fake UberTests";
+			productName = "Fake UberTests";
+			productReference = DE43AFED202B413700D01844 /* Fake UberTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DEA9DA6320112FAD0033F75C /* Fake Uber */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEA9DA7620112FAD0033F75C /* Build configuration list for PBXNativeTarget "Fake Uber" */;
@@ -240,6 +301,11 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "OnionApps Inc.";
 				TargetAttributes = {
+					DE43AFEC202B413700D01844 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DEA9DA6320112FAD0033F75C;
+					};
 					DEA9DA6320112FAD0033F75C = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -260,11 +326,19 @@
 			projectRoot = "";
 			targets = (
 				DEA9DA6320112FAD0033F75C /* Fake Uber */,
+				DE43AFEC202B413700D01844 /* Fake UberTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DE43AFEB202B413700D01844 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DEA9DA6220112FAD0033F75C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -279,6 +353,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		100952F37F87CD6717583140 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fake UberTests/Pods-Fake UberTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7F5AFA520955BE9FDFCBC63E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,6 +383,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fake Uber/Pods-Fake Uber-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A1F2328B3297F8438745F3B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Fake UberTests/Pods-Fake UberTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-Defines-NSData+zlib/GoogleToolboxForMac.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fake UberTests/Pods-Fake UberTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A584482438489505F804E532 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,7 +409,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Fake Uber/Pods-Fake Uber-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-f0850809/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -334,9 +441,35 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FA4F006BF37AA9607F299D21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fake UberTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DE43AFE9202B413700D01844 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE43AFF0202B413700D01844 /* Fake_UberTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DEA9DA6020112FAD0033F75C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -368,6 +501,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DE43AFF3202B413700D01844 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEA9DA6320112FAD0033F75C /* Fake Uber */;
+			targetProxy = DE43AFF2202B413700D01844 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		DEA9DA6B20112FAD0033F75C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -388,6 +529,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DE43AFF4202B413700D01844 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA893796D9571EDDAAAA2959 /* Pods-Fake UberTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H27XDZ2QBG;
+				HEADER_SEARCH_PATHS = "${PODS_ROOT}/Firebase/Core/Sources";
+				INFOPLIST_FILE = "Fake UberTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.LJover.Fake-UberTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fake Uber.app/Fake Uber";
+			};
+			name = Debug;
+		};
+		DE43AFF5202B413700D01844 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BB4EF5308190A556AEE1700 /* Pods-Fake UberTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H27XDZ2QBG;
+				HEADER_SEARCH_PATHS = "${PODS_ROOT}/Firebase/Core/Sources";
+				INFOPLIST_FILE = "Fake UberTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.LJover.Fake-UberTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fake Uber.app/Fake Uber";
+			};
+			name = Release;
+		};
 		DEA9DA7420112FAD0033F75C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -530,6 +707,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DE43AFF6202B413700D01844 /* Build configuration list for PBXNativeTarget "Fake UberTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE43AFF4202B413700D01844 /* Debug */,
+				DE43AFF5202B413700D01844 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DEA9DA5F20112FAD0033F75C /* Build configuration list for PBXProject "Fake Uber" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

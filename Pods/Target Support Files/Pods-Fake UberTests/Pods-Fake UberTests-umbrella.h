@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Fake_UberTests_1VersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Fake_UberTests_1VersionString[];
+FOUNDATION_EXPORT double Pods_Fake_UberTestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Fake_UberTestsVersionString[];
 
