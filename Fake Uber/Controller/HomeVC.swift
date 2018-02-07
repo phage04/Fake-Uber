@@ -428,24 +428,29 @@ extension HomeVC: MKMapViewDelegate{
         UpdateService.instance.updateDriverLocation(withCoordinate: userLocation.coordinate)
         UpdateService.instance.updateUserLocation(withCoordinate: userLocation.coordinate)
         
-        DataService.instance.userIsDriver(userKey: currentUserId!) { (isDriver) in
-            if isDriver == true {
-                DataService.instance.driverIsOnTrip(driverKey: self.currentUserId!, handler: { (isOnTrip, driverKey, tripKey) in
-                    if isOnTrip == true {
-                        self.zoom(toFitAnnotationsFromMapView: self.mapView, forActiveTripWithDriver: true, withKey: driverKey)
-                    } else{
-                        self.centerMapOnUserLocation()
-                    }
-                })
-            } else {
-                DataService.instance.passengerIsOnTrip(passengerKey: self.currentUserId!, handler: { (isOnTrip, driverKey, tripKey) in
-                    if isOnTrip == true {
-                        self.zoom(toFitAnnotationsFromMapView: self.mapView, forActiveTripWithDriver: true, withKey: driverKey)
-                    } else{
-                        self.centerMapOnUserLocation()
-                    }
-                })
+        if currentUserId != nil {
+            DataService.instance.userIsDriver(userKey: currentUserId!) { (isDriver) in
+                if isDriver == true {
+                    DataService.instance.driverIsOnTrip(driverKey: self.currentUserId!, handler: { (isOnTrip, driverKey, tripKey) in
+                        if isOnTrip == true {
+                            self.zoom(toFitAnnotationsFromMapView: self.mapView, forActiveTripWithDriver: true, withKey: driverKey)
+                        } else{
+                            self.centerMapOnUserLocation()
+                        }
+                    })
+                } else {
+                    DataService.instance.passengerIsOnTrip(passengerKey: self.currentUserId!, handler: { (isOnTrip, driverKey, tripKey) in
+                        if isOnTrip == true {
+                            self.zoom(toFitAnnotationsFromMapView: self.mapView, forActiveTripWithDriver: true, withKey: driverKey)
+                        } else{
+                            self.centerMapOnUserLocation()
+                        }
+                    })
+                }
             }
+        }else{
+            revealingSplashView.heartAttack = true
+            self.centerMapOnUserLocation()
         }
     }
     

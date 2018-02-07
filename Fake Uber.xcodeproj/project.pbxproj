@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BEFE195A27F3193FE1BC76EB /* Pods_Fake_Uber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623B2F6B5AE6322F14C44849 /* Pods_Fake_Uber.framework */; };
+		DE416808202B2877007D9D31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE416807202B2877007D9D31 /* GoogleService-Info.plist */; };
 		DEA58DF02013FD64004F421C /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DEF2013FD64004F421C /* UpdateService.swift */; };
 		DEA58DF22014134B004F421C /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DF12014134B004F421C /* DriverAnnotation.swift */; };
 		DEA58DF420144C0F004F421C /* PassengerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA58DF320144C0F004F421C /* PassengerAnnotation.swift */; };
@@ -32,7 +33,6 @@
 		DEF64BFA20124B0200DF359C /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF64BF920124B0200DF359C /* UIViewExt.swift */; };
 		DEF64BFC2012525E00DF359C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF64BFB2012525E00DF359C /* LoginVC.swift */; };
 		DEF64BFE20126ED000DF359C /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF64BFD20126ED000DF359C /* RoundedCornerTextField.swift */; };
-		DEF64C00201282F500DF359C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEF64BFF201282F500DF359C /* GoogleService-Info.plist */; };
 		DEF64C03201284C300DF359C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF64C02201284C300DF359C /* DataService.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +40,7 @@
 		623B2F6B5AE6322F14C44849 /* Pods_Fake_Uber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fake_Uber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B595A0D9463AAEAC2B5BA4DD /* Pods-Fake Uber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fake Uber.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fake Uber/Pods-Fake Uber.release.xcconfig"; sourceTree = "<group>"; };
 		C4D914200DD5AE20EE24AA56 /* Pods-Fake Uber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fake Uber.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fake Uber/Pods-Fake Uber.debug.xcconfig"; sourceTree = "<group>"; };
+		DE416807202B2877007D9D31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DEA58DEF2013FD64004F421C /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
 		DEA58DF12014134B004F421C /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		DEA58DF320144C0F004F421C /* PassengerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerAnnotation.swift; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		DEF64BF920124B0200DF359C /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		DEF64BFB2012525E00DF359C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DEF64BFD20126ED000DF359C /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
-		DEF64BFF201282F500DF359C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DEF64C02201284C300DF359C /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,7 +132,7 @@
 				DEA9DA6E20112FAD0033F75C /* Assets.xcassets */,
 				DEA9DA7020112FAD0033F75C /* LaunchScreen.storyboard */,
 				DEA9DA7320112FAD0033F75C /* Info.plist */,
-				DEF64BFF201282F500DF359C /* GoogleService-Info.plist */,
+				DE416807202B2877007D9D31 /* GoogleService-Info.plist */,
 			);
 			path = "Fake Uber";
 			sourceTree = "<group>";
@@ -270,7 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEA9DA7220112FAD0033F75C /* LaunchScreen.storyboard in Resources */,
-				DEF64C00201282F500DF359C /* GoogleService-Info.plist in Resources */,
+				DE416808202B2877007D9D31 /* GoogleService-Info.plist in Resources */,
 				DEA9DA6F20112FAD0033F75C /* Assets.xcassets in Resources */,
 				DEA9DA6D20112FAD0033F75C /* Main.storyboard in Resources */,
 			);
